@@ -1,6 +1,6 @@
 .PHONY: build run
 
-REPO  ?= dorowu/ubuntu-desktop-lxde-vnc
+REPO  ?= nekrofage/ubuntu-desktop-lxde-vnc
 TAG   ?= latest
 IMAGE ?= ubuntu:18.04
 LOCALBUILD ?= 1
@@ -12,7 +12,7 @@ run:
 	docker run --rm \
 		-p 6080:80 -p 6081:443 \
 		-v ${PWD}:/src:ro \
-		-e USER=doro -e PASSWORD=mypassword \
+		-e USER=util01 -e PASSWORD=mot2passe \
 		-e ALSADEV=hw:2,0 \
 		-e SSL_PORT=443 \
 		-v ${PWD}/ssl:/etc/nginx/ssl \
