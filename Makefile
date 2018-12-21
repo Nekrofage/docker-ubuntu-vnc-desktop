@@ -1,6 +1,6 @@
 .PHONY: build run
 
-REPO  ?= nekrofage/ubuntu-desktop-lxde-vnc
+REPO  ?= nekrofage/ubuntu-desktop-lxde-vnc-zandronum
 TAG   ?= latest
 IMAGE ?= ubuntu:18.04
 LOCALBUILD ?= 1

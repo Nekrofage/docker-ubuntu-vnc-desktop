@@ -22,7 +22,6 @@ ENV HOME=/root \
 RUN apt-get update \
     && apt-get install -y --no-install-recommends software-properties-common curl apache2-utils \
     && apt-get update \
-    && add-apt-repository -y ppa:fcwu-tw/apps \
     && apt-get install -y --no-install-recommends --allow-unauthenticated \
         supervisor nginx sudo vim-tiny net-tools zenity xz-utils \
         dbus-x11 x11-utils alsa-utils \
@@ -34,7 +33,6 @@ RUN apt-get update \
 		mc screen vim \
 		bash unzip git gnupg libglu1-mesa libgtk2.0 net-tools \
 		socat software-properties-common supervisor wget x11vnc xvfb \		
-    && add-apt-repository -r ppa:fcwu-tw/apps \
     && apt-get autoclean \
     && apt-get autoremove \
     && rm -rf /var/lib/apt/lists/*
@@ -46,11 +44,20 @@ COPY conf/zandronum.ini /root/.config/zandronum/
 COPY scripts/* /tmp/
 RUN /tmp/install_zandronum.sh
 
-
+# Freedoom installation
 RUN wget https://github.com/freedoom/freedoom/releases/download/v0.11.3/freedoom-0.11.3.zip \
     && unzip freedoom-0.11.3.zip \
     && rm freedoom-0.11.3.zip \
     && cp freedoom-0.11.3/freedoom2.wad /root/.config/zandronum  
+
+# Slade editor installation
+RUN wget -O- http://debian.drdteam.org/drdteam.gpg | apt-key add -    
+RUN apt-add-repository 'deb http://debian.drdteam.org/ stable multiverse'
+RUN apt-get update 
+RUN apt-get install -y slade
+RUN apt-get autoclean \
+    && apt-get autoremove \
+    && rm -rf /var/lib/apt/lists/*
 
 # tini for subreap
 ARG TINI_VERSION=v0.18.0
@@ -69,8 +76,6 @@ RUN apt-get update \
     && apt-get autoremove -y \
     && rm -rf /var/lib/apt/lists/* \
     && rm -rf /var/cache/apt/* /tmp/a.txt /tmp/b.txt
-
-
 
 
 ################################################################################
