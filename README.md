@@ -23,5 +23,5 @@ $ git clone --recursive -b doom https://github.com/Nekrofage/docker-ubuntu-vnc-d
   
 2/ Push commit.  
   
-$ git push -u doom master  
+$ git push -u origin doom  
   
