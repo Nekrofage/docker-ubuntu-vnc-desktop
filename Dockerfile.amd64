@@ -48,7 +48,8 @@ RUN /tmp/install_zandronum.sh
 RUN wget https://github.com/freedoom/freedoom/releases/download/v0.11.3/freedoom-0.11.3.zip \
     && unzip freedoom-0.11.3.zip \
     && rm freedoom-0.11.3.zip \
-    && cp freedoom-0.11.3/freedoom2.wad /root/.config/zandronum  
+    && cp freedoom-0.11.3/freedoom2.wad /root/.config/zandronum \
+    && rm freedoom-0.11.3 -rf
 
 # Slade editor installation
 RUN wget -O- http://debian.drdteam.org/drdteam.gpg | apt-key add -    
