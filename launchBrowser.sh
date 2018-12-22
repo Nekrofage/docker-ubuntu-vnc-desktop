@@ -1,3 +1,3 @@
 #!/bin/sh
 
-firefox http://127.0.0.1:6080/ &
+firefox -height 1024 -width 768 http://127.0.0.1:6080/ &
