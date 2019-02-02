@@ -22,10 +22,36 @@ See: README.frozenfoxx.docker-zandronum.md
   
 1/ Download repository.  
   
+```  
 $ git clone --recursive -b doom https://github.com/Nekrofage/docker-ubuntu-vnc-doom.git  
-  
+```  
   
 2/ Push commit.  
-  
+
+```
 $ git push -u origin doom  
   
+
+3/ Build Docker image and the volume.  
+
+$ ./createDockerVolume.sh
+$ ./buildDockerImage.sh
+```
+
+4/ Generate the SSL.  
+
+```
+$ ./generateSSL.sh
+```
+
+5/ Run the Docker image.  
+
+```
+$ ./runDockerImageSSL.sh
+```
+
+5/ Launch the browser.  
+
+```
+$ launchBrowserSSL.sh
+```
