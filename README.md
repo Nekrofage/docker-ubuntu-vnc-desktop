@@ -34,6 +34,7 @@ $ git push -u origin doom
 
 3/ Build Docker image and the volume.  
 
+```
 $ ./createDockerVolume.sh
 $ ./buildDockerImage.sh
 ```
