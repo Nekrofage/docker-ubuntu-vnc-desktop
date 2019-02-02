@@ -50,7 +50,7 @@ $ ./generateSSL.sh
 $ ./runDockerImageSSL.sh
 ```
 
-5/ Launch the browser.  
+6/ Launch the browser.  
 
 ```
 $ launchBrowserSSL.sh
