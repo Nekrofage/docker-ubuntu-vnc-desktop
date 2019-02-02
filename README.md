@@ -30,7 +30,7 @@ $ git clone --recursive -b doom https://github.com/Nekrofage/docker-ubuntu-vnc-d
 
 ```
 $ git push -u origin doom  
-  
+``` 
 
 3/ Build Docker image and the volume.  
 
