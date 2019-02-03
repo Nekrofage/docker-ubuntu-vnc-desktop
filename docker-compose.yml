@@ -1,0 +1,9 @@
+version: '3'
+
+services:
+  doomserver: 
+    build: ./doomserver
+
+volumes:
+  volume01:
+    driver: "local"
